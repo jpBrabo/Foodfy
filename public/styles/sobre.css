@@ -1,0 +1,14 @@
+
+.sobre{
+    width: 80%;
+    padding-left: 10%;
+    text-align: left;
+    
+    font-size: 18px;
+    line-height: 28px;
+    
+}
+
+section .sobre p{
+    width: 80%;
+}

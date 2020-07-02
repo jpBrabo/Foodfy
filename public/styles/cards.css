@@ -1,0 +1,30 @@
+.cards{
+    
+    display: grid;
+    gap: 25px;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 66%;
+    margin: auto;
+   
+}
+
+.card{
+    margin: auto;
+    transition: 0.2s;
+    width: auto;
+    cursor: pointer;
+}
+.card .description{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+}
+.card:hover{
+    border-radius: 13px;
+    box-shadow: 10px 10px 10px 10px grey;
+}
+.card img{
+    max-width: 90%;
+    max-height: 40%;
+    border-radius: 13px;
+}

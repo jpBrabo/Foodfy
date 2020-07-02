@@ -1,0 +1,27 @@
+.receita{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    
+    display: flex;
+    flex-direction: column;
+}
+.receita .title a{
+    text-align: center;
+    width: 40%;
+    height: 100%;
+    border-radius: 13px;
+}
+.receita .description{
+    padding-left: 10%;
+    text-align: left;
+    width: 80%;
+}
+.receita .description .ingredients p{
+    display: grid;
+    grid-template-columns: 1fr;
+    
+}
+.receita .description .prepare{
+    max-width: 100px;
+}
