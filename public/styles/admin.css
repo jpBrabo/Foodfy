@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+nav{
+    text-align: center;
+    padding: 18px;
+    background-color: black;
+}
+nav.top{
+    display: grid;
+    padding: 23px;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background-color: white;
+}
+.top button{
+    padding: 13px;
+    background-color: black;
+    color: white;
+    outline: none;
+    border-radius: 13px;
+}

@@ -3,7 +3,7 @@
     <section class="cards">
         {% for food in foods %}
             <div class="card" id="{{food.id}}">
-                <img src="/assets/{{food.img}}.png" alt="{{food.title}}">
+                <img src="{{food.img}}" alt="{{food.title}}">
                 <div class="description">
                     <h3 id="{{food.title}}">{{food.title}}</h3>
                     <p id="{{food.author}}">{{food.author}}</p>

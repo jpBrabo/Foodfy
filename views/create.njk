@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="/styles/create.css">
+
+
+<form action="/receitas" method="POST">
+<header>
+    <h1>Criando receita</h1>
+    <button type="submit">Salvar receita</button>
+</header>
+    <div class="card">
+        <div class="info">
+            <div>Nome da receita</div>
+            <div><input type="text" name="title" placeholder="Nome"></div>
+        </div>
+        <div class="info">
+            <div>Imagem da receita</div>
+            <div><input type="url" name="img" placeholder="http://"></div>
+        </div>
+        <div class="info">
+            <div>Ingredientes</div>
+            <div id="ingredients">
+                <div class="ingredient">
+                    <input type="text" name="ingredients" value="" placeholder="Ingredientes"/>
+                </div>
+            </div>
+            <button type="button" class="add-ingredient">Novo ingrediente</button>
+        </div>
+        <div class="info">
+            <div>Modo de preparo</div>
+            <div id="prepare">
+                <div class="prepare">
+                    <input type="text" name="prepare" value="" placeholder="Modo de Preparo"/>
+                </div>
+            </div>
+            <button type="button" class="add-prepare">Novo Passo</button>
+        </div>
+        <div class="info">
+            <div>Informações adicionais</div>
+            <div>
+                <textarea name="infomation" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+    </div>
+
+    
+</form>
+<script src="/scripts/ingredient.js"></script>
+<script src="/scripts/prepare.js"></script>
