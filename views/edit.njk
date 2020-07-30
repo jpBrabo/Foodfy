@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="/styles/create.css">
+<header>
+    <h1>Criando receita</h1>
+    
+    
+</header>
+
+<form method="POST" action="/receitas?_method=PUT">
+<input type="hidden" name="id" value={{receita.id}}>
+    <div class="card">
+        <div class="info">
+            <div>Nome da receita</div>
+            <div><input type="text" name="title" placeholder="Nome"  value="{{receita.title}}"></div>
+            
+        </div>
+        <div class="info">
+            <div>Imagem da receita</div>
+            <div><input type="url" name="img" placeholder="http://" value="{{receita.img}}"></div>
+        </div>
+        <div class="info">
+            <div>Ingredientes</div>
+            <div id="ingredients">
+                <div class="ingredient">
+                    {% if receita.ingredients != '' %}
+                        {% for ingredients in receita.ingredients %}
+                            <input type="text" name="ingredients"  placeholder="Ingredientes" value="{{ingredients}}"/>
+                        {% endfor %}
+                    {% endif %}
+                    {% if receita.ingredients == '' %}
+                        {% for ingredients in receita.ingredients %}
+                            <input type="text" name="ingredients" placeholder="Ingredientes" value="{{ingredients}}">
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+            <button type="button" class="add-ingredient">Novo ingrediente</button>
+        </div>
+        <div class="info">
+            <div>Modo de preparo</div>
+            <div id="prepare">
+                <div class="prepare">
+                    {% if receita.ingredients != [] %}
+                        {% for prepare in receita.prepare %}
+                            <input type="text" name="prepare" placeholder="Modo de Preparo" value="{{ prepare }}" />
+                        {% endfor %}
+                    {% endif %}
+                    {% if receita.ingredients == [] %}
+                        <input type="text" name="prepare" placeholder="Modo de preparo">
+                    {% endif %}
+                </div>
+            </div>
+            <button type="button" class="add-prepare">Novo Passo</button>
+        </div>
+        <div class="info">
+            <div>Informações adicionais</div>
+            <div>
+                <textarea name="informations" cols="30" rows="10" >{{receita.informations}}</textarea>
+            </div>
+        </div>
+    </div>
+    <button type="submit">Salvar receita</button>
+</form>
+<form method="post" action="/receitas?_method=DELETE"><input type="hidden" name="id" value="{{receita.id}}"><button type="submit">Deletar</button></form>
+<script src="/scripts/ingredient.js"></script>
+<script src="/scripts/prepare.js"></script>

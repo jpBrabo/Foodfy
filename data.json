@@ -28,10 +28,11 @@
       "author": "por Pizzaria do Maradona"
     },
     {
-      "id": 5,
+      "id": "5",
       "img": "http://localhost:3000/assets/espaguete.png",
       "title": "Espaguete ao alho",
-      "author": "por Júlia Kinoto"
+      "author": "por Júlia Kinoto",
+      "infomations": "a"
     },
     {
       "id": 6,
@@ -39,5 +40,6 @@
       "title": "Docinhos pão-do-céu",
       "author": "por Kopenhagem"
     }
+    
   ]
 }

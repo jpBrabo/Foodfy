@@ -9,19 +9,22 @@
             <p id="{{receita.author}}">{{receita.author}}</p>
         </div>
         
-        
+        <button id="edit">Editar</button>
         <div class="description">
             <h1>Ingredientes</h1>
             <div class="ingredients">
                 {% for ingredient in receita.ingredients %}
-                    <li>{{ingredient}}  </li><br>
+                    <li>{{ingredient}};</li><br>
                 {% endfor %}
             </div>
             <h1>Modo de preparo</h3>
             <div class="prepare">
-                {% for prepare in receita.prepare %}
-                    <li>{{prepare}}</li><br>
-                {% endfor %}
+                <ol>
+                    {% for prepare in receita.prepare %}
+                        <li>{{prepare}};</li><br>
+                    {% endfor %}
+                </ol>
+                
                 
             </div>
             <h1>Informações adicionais</h1>
@@ -30,4 +33,5 @@
             </div>
         </div>
     </div>
+    <script src="/scripts/editRedirect.js"></script>
 {% endblock content %}
