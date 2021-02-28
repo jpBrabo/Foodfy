@@ -84,3 +84,5 @@ Com yarn
 ```bash
 yarn start
 ```
+
+**Feito por [João Pedro Resende](https://jpres.dev)**
