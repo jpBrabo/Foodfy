@@ -1,4 +1,4 @@
-<center><h1>Foodfy</h1></center>
+<h1 align="center">Foodfy</h1>
 
 <p align="center"><img src="./.github/logo-chef.png" alt="Chef foodfy"/></p>
 
@@ -31,9 +31,9 @@ Tarefas para terminar:
 - [x] Deletar receitas
 - [x] Refatorar projeto.
 - [x] Armazenar receitas no banco de dados.
-- [] Refatorar a parte de editar e deletar receitas.
-- [] Criação de chefs.
-- [] Filtro de receitas.
+- [ ] Refatorar a parte de editar e deletar receitas.
+- [ ] Criação de chefs.
+- [ ] Filtro de receitas.
 
 ## 👷 Instalação
 
