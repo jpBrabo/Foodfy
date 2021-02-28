@@ -6,6 +6,3 @@ for (let card of cards){
     })
     
 }
-
-
-
