@@ -1,0 +1,55 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "img": "http://localhost:3000/assets/asinhas.png",
+      "title": "Asinhas de frango ao barbercue",
+      "ingredients": ["teste","teste"],
+      "prepare": ["teste","teste"],
+      "author": "por KFC"
+    },
+    {
+      "id": 2,
+      "img": "http://localhost:3000/assets/lasanha.png",
+      "title": "Lasanha mac n’ cheese",
+      "ingredients": ["teste","teste"],
+      "prepare": ["teste","teste"],
+      "author": "por Sadia"
+    },
+    {
+      "id": 3,
+      "img": "http://localhost:3000/assets/burger.png",
+      "title": "Triplo burger bacon",
+      "author": "por MC´Donalds",
+      "ingredients": ["teste","teste"],
+      "prepare": ["teste","teste"],
+      "informations": "Você sabia que a receita que precede o hambúrguer surgiu no século XIII, na Europa? A ideia de moer a carne chegou em Hamburgo no século XVII, onde um açogueiro resolveu também temperá-la. Assim, a receita foi disseminada nos Estados Unidos por alemães da região. Lá surgiu a ideia de colocar o hambúrguer no meio do pão e adicionar outros ingredientes, como queijo , tomates e alface."
+    },
+    {
+      "id": 4,
+      "img": "http://localhost:3000/assets/pizza.png",
+      "title": "Pizza 4 estações",
+      "author": "por Pizzaria do Maradona",
+      "ingredients": ["teste","teste"],
+      "prepare": ["teste","teste"]
+    },
+    {
+      "id": "5",
+      "img": "http://localhost:3000/assets/espaguete.png",
+      "title": "Espaguete ao alho",
+      "author": "por Júlia Kinoto",
+      "ingredients": ["teste","teste"],
+      "prepare": ["teste","teste"],
+      "infomations": "a"
+    },
+    {
+      "id": 6,
+      "img": "http://localhost:3000/assets/doce.png",
+      "title": "Docinhos pão-do-céu",
+      "ingredients": ["teste","teste"],
+      "prepare": ["teste","teste"],
+      "author": "por Kopenhagem"
+    }
+    
+  ]
+}
