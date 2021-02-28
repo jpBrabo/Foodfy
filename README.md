@@ -31,7 +31,7 @@ Tarefas para terminar:
 - [x] Deletar receitas
 - [x] Refatorar projeto.
 - [x] Armazenar receitas no banco de dados.
-- [ ] Refatorar a parte de editar e deletar receitas.
+- [x] Refatorar a parte de editar e deletar receitas.
 - [ ] Criação de chefs.
 - [ ] Filtro de receitas.
 
