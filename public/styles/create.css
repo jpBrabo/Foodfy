@@ -1,15 +1,18 @@
-form header{
-    text-align: center;
-    width: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap');
+body {
+    font-family: Roboto;
+}
+header{
+    padding-top: 32px;
+    width: 50%;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    flex-direction: row;
 }
 form{
     width: 100%;
-    
 }
-.card{
+.inputs{
     width: 100%;
 }
 .info{
@@ -22,10 +25,17 @@ form{
 input,
 textarea{
     margin-top: 32px;
+    margin-bottom: 18px;
     border-radius: 13px;
     outline: none;
     padding: 13px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    border-radius: 4px;
     width: 100%;
+}
+textarea {
+    resize: vertical;
 }
 button{
     margin: 0 auto;
