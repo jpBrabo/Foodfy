@@ -11,13 +11,16 @@ module.exports = {
     },
     allRecipes(req,res){
         Receitas.all(receitas => {
-            return res.render("receitas", { receitas })
+            return res.render("receitas/receitas", { receitas })
         })
     },
     adminRecipes(req,res) {
         Receitas.all(receitas => {
-            return res.render("admin", { receitas })
+            return res.render("admin/home", { receitas })
         })
+    },
+    adminChef(req,res) {
+        return res.render("admin/chef")
     },
     post(req,res) {
         const keys = Object.keys(req.body)
@@ -33,17 +36,17 @@ module.exports = {
     show(req,res) {
         Receitas.find(req.params.id, receita => {
             if(!receita) throw new Error("Recipe not found.")
-            return res.render("show", { receita })
+            return res.render("receitas/show", { receita })
         })
     },
     adminEdit(req,res) {
         Receitas.find(req.params.id, receita => {
             if(!receita) throw new Error("Recipe not found.")
-            return res.render("edit", { receita })
+            return res.render("receitas/edit", { receita })
         })
     },
     adminCreate(req,res) {
-        return res.render("create")
+        return res.render("receitas/create")
     },
     put(req,res) {
         const keys = Object.keys(req.body);
