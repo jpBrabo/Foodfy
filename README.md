@@ -63,12 +63,12 @@ No postbird ou outro app para gerenciar o banco de dados, crie um database chama
 ```sql
 CREATE TABLE "recipes" (
   "id" SERIAL PRIMARY KEY,
-  "image_url" text NOT NULL,
+  "chef_id" integer NOT NULL,
+  "image" text NOT NULL,
   "title" text NOT NULL,
-  "author" text NOT NULL,
   "ingredients" text[] NOT NULL,
-  "prepare" text[] NOT NULL,
-  "informations" text
+  "preparation" text[] NOT NULL,
+  "information" text
 )
 ```
 Para criar a tabela de receitas.
