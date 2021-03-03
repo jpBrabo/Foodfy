@@ -3,12 +3,13 @@
 {% block content %}
 <link rel="stylesheet" href="/styles/create.css">
 
-<header>
-    <h1>Criando receita</h1>
-    <button type="submit" form="create_recipe">Salvar receita</button>
-</header>
+
 
 <form id="create_recipe" action="/receitas" method="POST">
+    <header class="top">
+        <h1>Criando receita</h1>
+        <button type="submit" form="create_recipe" style="background-color:#7154c1">Salvar receita</button>
+    </header>
     <div class="inputs">
         <div class="info">
             <div>Nome da receita</div>
@@ -52,4 +53,5 @@
 </form>
 <script src="/scripts/ingredient.js"></script>
 <script src="/scripts/prepare.js"></script>
+<script src="/scripts/pageActiveAdmin.js"></script>
 {% endblock content %}
