@@ -1,0 +1,30 @@
+{% extends "../admin/admin_layout.njk" %}
+
+{% block content %}
+<form method="post" id="form__delete" action="/chefs?_method=DELETE"><input type="hidden" name="id" id="delete__chef" value="{{chef.id}}"></form>
+<link rel="stylesheet" href="/styles/create.css">
+
+<header class="top">
+    <h1>Editando chef</h1>
+    <div>
+        <button type="submit" form="form__delete" style="background-color:#DC4747">Deletar chef</button>
+        <button type="submit" form="form__edit" style="background-color:#7154c1">Salvar chef</button>
+    </div>
+</header>
+<form id="form__edit" method="POST" action="/chefs?_method=PUT">
+    <input type="hidden" name="id" value={{chef.id}}>
+    <div class="inputs">
+        <div class="info">
+            <div>Nome do(a) chef</div>
+            <div><input type="text" name="name" placeholder="Nome" value={{chef.name}}></div>
+        </div>
+        <div class="info">
+            <div>Imagem do(a) chef</div>
+            <div><input type="url" name="avatar_url" placeholder="http://" value={{chef.avatar_url}}></div>
+        </div>
+    </div>
+</form>
+<script src="/scripts/ingredient.js"></script>
+<script src="/scripts/prepare.js"></script>
+<script src="/scripts/pageActiveAdmin.js"></script>
+{% endblock content %}
