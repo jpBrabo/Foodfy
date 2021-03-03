@@ -1,0 +1,12 @@
+{% extends "layout.njk" %}
+{% block content %}
+    <section class="cards">
+        {% for chef in chefs %}
+            <div class="card chef" id="{{chef.id}}">
+                <img src="{{chef.avatar_url}}" alt="{{chef.name}}" class="chef">
+                <h3 id="{{chef.name}}">{{chef.name}}</h3>
+            </div>
+        {% endfor %}
+    </section>
+    <script src="/scripts/redirectChef.js"></script>
+{% endblock content %}
