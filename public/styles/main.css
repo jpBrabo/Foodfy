@@ -1,13 +1,20 @@
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap');
 body{
     margin: 0;
     padding: 0;
     font-family: Roboto;
 }
+h1.weight__500 {
+    font-weight: 500;
+}
+p.weight__100{
+    font-weight: 100;
+}
 header{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    justify-content: space-around;
     
     width: 33%;
     height: 33%;
@@ -19,6 +26,10 @@ header{
 header h1{
     font-family:-apple-system;
     font-weight: 300 ;
+}
+header .links {
+    display: flex;
+    flex-direction: row;
 }
 header .links a{
     position: relative;
