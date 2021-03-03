@@ -1,54 +1,53 @@
 const Receitas = require("../models/Receitas")
 
 module.exports = {
+    // - Rotas principais.
     index(req,res) {
-        Receitas.all(receitas => {
+        Receitas.allRecipes(receitas => {
             return res.render("menu", { receitas })
         })
     },
     about(req,res){
         return res.render("sobre")
     },
+    // - Controle de rotas das receitas
     allRecipes(req,res){
-        Receitas.all(receitas => {
+        Receitas.allRecipes(receitas => {
             return res.render("receitas/receitas", { receitas })
         })
     },
+    showRecipe(req,res) {
+        Receitas.findRecipe(req.params.id, receita => {
+            if(!receita) throw new Error("Recipe not found.")
+            return res.render("receitas/show", { receita })
+        })
+    },
     adminRecipes(req,res) {
-        Receitas.all(receitas => {
+        Receitas.allRecipes(receitas => {
             return res.render("admin/home", { receitas })
         })
     },
-    adminChef(req,res) {
-        return res.render("admin/chef")
+    adminRecipeEdit(req,res) {
+        Receitas.findRecipe(req.params.id, receita => {
+            if(!receita) throw new Error("Recipe not found.")
+            return res.render("receitas/edit", { receita })
+        })
     },
-    post(req,res) {
+    adminRecipeCreate(req,res) {
+        return res.render("receitas/create")
+    },
+    postRecipe(req,res) {
         const keys = Object.keys(req.body)
         //req.body.objeto
         for(key of keys){
             if(req.body[key] == '')
                 return res.send("Please, fill all fields!!! >:(")
         }
-        Receitas.create(req.body, receitas => {
+        Receitas.createRecipe(req.body, receitas => {
             return res.redirect(`/receitas/${receitas.id}`)
         })
     },
-    show(req,res) {
-        Receitas.find(req.params.id, receita => {
-            if(!receita) throw new Error("Recipe not found.")
-            return res.render("receitas/show", { receita })
-        })
-    },
-    adminEdit(req,res) {
-        Receitas.find(req.params.id, receita => {
-            if(!receita) throw new Error("Recipe not found.")
-            return res.render("receitas/edit", { receita })
-        })
-    },
-    adminCreate(req,res) {
-        return res.render("receitas/create")
-    },
-    put(req,res) {
+    putRecipe(req,res) {
         const keys = Object.keys(req.body);
 
         for (key of keys) {
@@ -57,11 +56,11 @@ module.exports = {
           }
         }
 
-        Receitas.update(req.body, () => {
+        Receitas.updateRecipe(req.body, () => {
             return res.redirect(`/receitas/${req.body.id}`)
         })
     },
-    delete(req,res) {
+    deleteRecipe(req,res) {
         const keys = Object.keys(req.body);
 
         for (key of keys) {
@@ -70,8 +69,8 @@ module.exports = {
           }
         }
         
-        Receitas.delete(req.body.id, () => {
+        Receitas.deleteRecipe(req.body.id, () => {
             return res.redirect(`/admin/receitas`)
         })
-    }
+    },
 }
