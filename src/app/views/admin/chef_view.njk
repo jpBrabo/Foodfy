@@ -1,0 +1,18 @@
+{% extends "./admin_layout.njk" %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="/styles/chef.css">
+    <div class="chef" id="{{chef.id}}">
+        <div class="details">
+            <h2>Chef: {{chef.name}}</h2>
+            <button id="edit">Editar chef</button>
+        </div>
+        <div class="title">
+            <a><img src="{{chef.avatar_url}}" alt="{{chef.name}}"></a>
+            <h3 id="{{chef.name}}">{{chef.name}}</h3>
+        </div>
+
+    </div>
+    <script src="/scripts/editRedirectChef.js"></script>
+    <script src="/scripts/pageActiveAdmin.js"></script>
+{% endblock content %}
