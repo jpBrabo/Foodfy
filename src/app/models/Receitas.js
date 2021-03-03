@@ -1,21 +1,22 @@
 const db = require("../../config/db")
 
 module.exports = {
-    all(callback) {
+    // - Model das receitas
+    allRecipes(callback) {
         db.query(`SELECT * FROM recipes ORDER BY title ASC`, (err, results) => {
             if(err) throw new Error(`Database error. ${err}`)
             callback(results.rows)
         })
     },
-    create(data,callback) {
+    createRecipe(data,callback) {
         const query = `
             INSERT INTO recipes (
-                image_url,
+                chef_id
+                image,
                 title,
-                author,
                 ingredients,
-                prepare,
-                informations
+                preparation,
+                information
             ) VALUES ($1, $2, $3, $4, $5, $6)
             RETURNING id
         `
@@ -33,13 +34,13 @@ module.exports = {
             callback(results.rows[0])
         });
     },
-    find(id, callback) {
+    findRecipe(id, callback) {
         db.query(`SELECT * FROM recipes WHERE id = $1`,[id], (err, results) => {
             if (err) throw `Database error. ${err}`;
             callback(results.rows[0])
         })
     },
-    update(data, callback) {
+    updateRecipe(data, callback) {
         const query = `
         UPDATE recipes SET
             title=($1),
@@ -64,11 +65,11 @@ module.exports = {
             callback()
         })
     },
-    delete(id, callback) {
+    deleteRecipe(id, callback) {
         db.query(`DELETE FROM recipes WHERE id = $1`, [id], (err, _) => {
             if (err) throw `Database error. ${err}`
 
             callback()
         })
-    }
+    },
 }
