@@ -3,7 +3,6 @@ body {
     font-family: Roboto;
 }
 header{
-    padding-top: 32px;
     width: 50%;
     margin: 0 auto;
     display: flex;
@@ -11,21 +10,29 @@ header{
 }
 form{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .inputs{
+    margin-top: 8px;
     width: 100%;
 }
 .info{
-    margin: 32px 25%;
+    margin: 0 auto;
+    width: 65%;
 }
 .info div:nth-child(1){
+    margin-top: 16px;
     font-size: 18px;
     color: #555;
 }
 input,
 textarea{
-    margin-top: 32px;
-    margin-bottom: 18px;
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 8px;
     border-radius: 13px;
     outline: none;
     padding: 13px;
