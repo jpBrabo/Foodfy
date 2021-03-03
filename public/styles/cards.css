@@ -1,17 +1,15 @@
 .cards{
-    
     display: grid;
     gap: 25px;
     grid-template-columns: 1fr 1fr 1fr;
     width: 66%;
     margin: auto;
-   
 }
 
 .card{
-    margin: auto;
+    margin: 0 auto;
     transition: 0.2s;
-    width: auto;
+    width: 100%;
     cursor: pointer;
 }
 .card .description{
@@ -26,4 +24,29 @@
 .card img{
     width: 70%;
     border-radius: 13px;
+}
+.cards.chefs{
+    display: grid;
+    gap: 25px;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    margin: auto;
+}
+.card.chef{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    transition: 0.2s;
+    width: 45%;
+    align-items: center;
+    cursor: pointer;
+}
+.card.chef h3{
+    text-align: center;
+}
+.card img.chef{
+    width: 60%;
+    margin-right: 16px;
+    border-radius: 50%;
+    border: 1px solid #7154c1;
 }
