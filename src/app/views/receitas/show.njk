@@ -1,6 +1,7 @@
 {% extends "layout.njk" %}
-<link rel="stylesheet" type="text/css" href="/styles/receita.css">
+
 {% block content %}
+    <link rel="stylesheet" type="text/css" href="/styles/receita.css">
     <div class="receita" id="{{receita.id}}">
 
         <div class="title">
@@ -30,4 +31,5 @@
         </div>
     </div>
     <script src="/scripts/editRedirect.js"></script>
+    <script src="/scripts/pageActive.js"></script>
 {% endblock content %}
