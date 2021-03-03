@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="/styles/create.css">
-<header>
+<header class="top">
     <h1>Criando receita</h1>
     <form method="post" action="/receitas?_method=DELETE"><input type="hidden" name="id" value="{{receita.id}}"><button type="submit">Deletar</button></form>
     <button type="submit" form="change_values">Salvar receita</button>
@@ -62,3 +62,4 @@
 </form>
 <script src="/scripts/ingredient.js"></script>
 <script src="/scripts/prepare.js"></script>
+<script src="/scripts/pageActiveAdmin.js"></script>
