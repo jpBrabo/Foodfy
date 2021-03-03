@@ -1,8 +1,28 @@
 {% extends "./admin_layout.njk" %}
 
 {% block content %}
-<header class="top">
-    <h1>Gerenciar sua conta</h1>
-</header>
-<script src="/scripts/pageActiveAdmin.js"></script>
+    <header class="top">
+        <h1>Gerenciar chefs</h1>
+        <a href="/admin/chefs/create">
+            <button>Criar um chef</button>
+        </a>
+    </header>
+    <section class="cards chefs">
+        {% for chef in chefs %}
+            <div class="card chef" id="{{chef.id}}">
+                <img src="{{chef.avatar_url}}" alt="{{chef.name}}" class="chef">
+                <h3 id="{{chef.name}}">{{chef.name}}</h3>
+            </div>
+        {% endfor %}
+    </section>
+    <script src="/scripts/pageActiveAdmin.js"></script>
+    <script>
+        const cards = document.querySelectorAll(".card");
+        for (let card of cards) {
+            card.addEventListener("click", () => {
+                const chefId = card.getAttribute("id")
+                window.location.href = `/admin/chefs/view/${chefId}`
+            })
+        }
+    </script>
 {% endblock content %}
