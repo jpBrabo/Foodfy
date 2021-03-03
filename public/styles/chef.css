@@ -1,0 +1,45 @@
+.chef{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    
+    display: flex;
+    flex-direction: column;
+}
+.chef .title a{
+    text-align: center;
+    width: 40%;
+    height: 100%;
+    border-radius: 13px;
+}
+.chef .title a img{
+    width: 10%;
+    border-radius: 50%;
+    border: 3px solid #7154c1;
+}
+.chef .details {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+.chef .details h2{
+    width: 50%;
+}
+li{
+    color: black;
+    opacity: 80%;
+    font-size:16px;
+    font-weight: bold;
+}
+#edit{
+    width: 10%;
+    border-radius: 13px;
+    border: none;
+    padding: 13px;
+    background-color: #7159c1;
+    margin: 23px auto;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
