@@ -5,7 +5,7 @@
     <div class="receita" id="{{receita.id}}">
 
         <div class="title">
-            <a><img src="{{receita.image_url}}" alt="{{receita.title}}"></a>
+            <a><img src="{{receita.image}}" alt="{{receita.title}}"></a>
             <h3 id="{{receita.title}}">{{receita.title}}</h3>
             <p id="{{receita.author}}">{{receita.author}}</p>
         </div>
@@ -20,13 +20,13 @@
             </div>
             <h1>Modo de preparo</h3>
             <div class="prepare">
-                    {% for prepare in receita.prepare %}
+                    {% for prepare in receita.preparation %}
                         <li>{{prepare}};</li><br>
                     {% endfor %}
             </div>
             <h1>Informações adicionais</h1>
             <div class="informations">
-                <p>{{receita.informations}}</p>
+                <p>{{receita.information}}</p>
             </div>
         </div>
     </div>

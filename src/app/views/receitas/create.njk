@@ -1,57 +1,61 @@
 {% extends "../admin/admin_layout.njk" %}
 
 {% block content %}
-<link rel="stylesheet" href="/styles/create.css">
+    <link rel="stylesheet" href="/styles/create.css">
 
-
-
-<form id="create_recipe" action="/receitas" method="POST">
-    <header class="top">
-        <h1>Criando receita</h1>
-        <button type="submit" form="create_recipe" style="background-color:#7154c1">Salvar receita</button>
-    </header>
-    <div class="inputs">
-        <div class="info">
-            <div>Nome da receita</div>
-            <div><input type="text" name="title" placeholder="Nome"></div>
-        </div>
-        <div class="info">
-            <div>Autor</div>
-            <div><input type="text" name="author" placeholder="Nome do autor"></div>
-        </div>
-        <div class="info">
-            <div>Imagem da receita</div>
-            <div><input type="url" name="image_url" placeholder="http://"></div>
-        </div>
-        <div class="info">
-            <div>Ingredientes</div>
-            <div id="ingredients">
-                <div class="ingredient">
-                    <input type="text" name="ingredients" value="" placeholder="Ingredientes"/>
+    <form id="create_recipe" action="/receitas" method="POST">
+        <header class="top">
+            <h1>Criando receita</h1>
+            <button type="submit" form="create_recipe" style="background-color:#7154c1">Salvar receita</button>
+        </header>
+        <div class="inputs">
+            <div class="info">
+                <div>Nome da receita</div>
+                <div><input type="text" name="title" placeholder="Nome"></div>
+            </div>
+            <div class="info">
+                <div>Imagem da receita</div>
+                <div><input type="url" name="image" placeholder="http://"></div>
+            </div>
+            <div class="info">
+                <div>Chef</div>
+                <div>
+                    <select name="chef_id">
+                        {% for chef in chefOptions %}
+                            <option value="{{chef.id}}">{{chef.name}}</option>
+                        {% endfor %}
+                    </select>
                 </div>
             </div>
-            <button type="button" class="add-ingredient">Novo ingrediente</button>
-        </div>
-        <div class="info">
-            <div>Modo de preparo</div>
-            <div id="prepare">
-                <div class="prepare">
-                    <input type="text" name="prepare" value="" placeholder="Modo de Preparo"/>
+            <div class="info">
+                <div>Ingredientes</div>
+                <div id="ingredients">
+                    <div class="ingredient">
+                        <input type="text" name="ingredients" value="" placeholder="Ingredientes"/>
+                    </div>
+                </div>
+                <button type="button" class="add-ingredient">Novo ingrediente</button>
+            </div>
+            <div class="info">
+                <div>Modo de preparo</div>
+                <div id="prepare">
+                    <div class="prepare">
+                        <input type="text" name="prepare" value="" placeholder="Modo de Preparo"/>
+                    </div>
+                </div>
+                <button type="button" class="add-prepare">Novo Passo</button>
+            </div>
+            <div class="info">
+                <div>Informações adicionais</div>
+                <div>
+                    <textarea name="informations" cols="30" rows="10" placeholder="Alguma informação interessante da sua receita."></textarea>
                 </div>
             </div>
-            <button type="button" class="add-prepare">Novo Passo</button>
+            
         </div>
-        <div class="info">
-            <div>Informações adicionais</div>
-            <div>
-                <textarea name="informations" cols="30" rows="10" placeholder="Alguma informação interessante da sua receita."></textarea>
-            </div>
-        </div>
-    </div>
 
-    
-</form>
-<script src="/scripts/ingredient.js"></script>
-<script src="/scripts/prepare.js"></script>
-<script src="/scripts/pageActiveAdmin.js"></script>
+    </form>
+    <script src="/scripts/ingredient.js"></script>
+    <script src="/scripts/prepare.js"></script>
+    <script src="/scripts/pageActiveAdmin.js"></script>
 {% endblock content %}
