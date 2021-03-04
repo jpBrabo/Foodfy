@@ -34,7 +34,9 @@ module.exports = {
         })
     },
     adminRecipeCreate(req,res) {
-        return res.render("receitas/create")
+        Receitas.chefsSelectOptions(options => {
+            return res.render("receitas/create", { chefOptions: options})
+        })
     },
     postRecipe(req,res) {
         const keys = Object.keys(req.body)
@@ -70,7 +72,7 @@ module.exports = {
         }
         
         Receitas.deleteRecipe(req.body.id, () => {
-            return res.redirect(`/admin/receitas`)
+            return res.redirect(`/admin/recipes`)
         })
     },
 }
