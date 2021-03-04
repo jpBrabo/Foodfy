@@ -11,7 +11,7 @@ module.exports = {
     createRecipe(data,callback) {
         const query = `
             INSERT INTO recipes (
-                chef_id
+                chef_id,
                 image,
                 title,
                 ingredients,
@@ -21,9 +21,9 @@ module.exports = {
             RETURNING id
         `
         const values = [
-            data.image_url,
+            data.chef_id,
+            data.image,
             data.title,
-            data.author,
             Array(data.ingredients),
             Array(data.prepare),
             data.informations,
@@ -72,4 +72,11 @@ module.exports = {
             callback()
         })
     },
+    chefsSelectOptions(callback){
+        db.query("SELECT name, id FROM chefs", function (err, results) {
+          if(err) throw "Database error."
+    
+          callback(results.rows)
+        })
+    }
 }
