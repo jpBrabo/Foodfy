@@ -22,7 +22,7 @@
                 <div>
                     <select name="chef_id">
                         {% for chef in chefOptions %}
-                            <option value="{{chef.id}}">{{chef.name}}</option>
+                            <option value={{chef.id}}>{{chef.name}}</option>
                         {% endfor %}
                     </select>
                 </div>
