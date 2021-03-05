@@ -17,6 +17,9 @@
     align-items: center;
     grid-template-columns: 1fr 1fr;
 }
+.card .only__title{
+    display: initial;
+}
 .card:hover{
     opacity: 80%;
 }
@@ -37,15 +40,18 @@
     flex-direction: row;
     margin: 0 auto;
     transition: 0.2s;
-    width: 45%;
+    width: 60%;
     align-items: center;
     cursor: pointer;
 }
-.card.chef h3{
+.card.chef div h4{
     text-align: center;
+    display: block;
+    width: 100%;
+    max-width: 30%;
 }
 .card img.chef{
-    width: 60%;
+    width: 50%;
     margin-right: 16px;
     border-radius: 50%;
     border: 1px solid #7154c1;

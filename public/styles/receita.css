@@ -6,11 +6,22 @@
     display: flex;
     flex-direction: column;
 }
+.receita .title img {
+    max-width: 45%;
+}
 .receita .title a{
     text-align: center;
-    width: 40%;
     height: 100%;
     border-radius: 13px;
+}
+.receita .details {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+.receita .details h2{
+    width: 50%;
 }
 .receita .description{
     padding-left: 10%;
@@ -33,8 +44,10 @@ li{
     font-weight: bold;
 }
 #edit{
-    width: 30%;
-    border-radius: 13px;
+    width: 23%;
+    background: #6558C3;
+    border-radius: 4px;
+    border-radius: 4px;
     border: none;
     padding: 13px;
     background-color: #7159c1;
