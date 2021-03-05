@@ -11,6 +11,7 @@ routes.get("/sobre", receitas.about)
 routes.get("/receitas", receitas.allRecipes)
 routes.get("/receitas/:id", receitas.showRecipe)
 routes.get("/admin/recipes", receitas.adminRecipes)
+routes.get("/admin/recipes/view/:id", receitas.adminRecipeShow)
 routes.get("/admin/recipes/create",receitas.adminRecipeCreate)
 routes.get("/admin/recipes/edit/:id", receitas.adminRecipeEdit)
 
