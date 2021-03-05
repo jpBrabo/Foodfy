@@ -7,23 +7,21 @@
         <div class="title">
             <a><img src="{{receita.image}}" alt="{{receita.title}}"></a>
             <h3 id="{{receita.title}}">{{receita.title}}</h3>
-            <p id="{{receita.author}}">{{receita.author}}</p>
+            <p id="{{receita.chef_id}}">Feito por {{receita.chef_name}}</p>
         </div>
-        
-        <button id="edit">Editar</button>
         <div class="description">
             <h1>Ingredientes</h1>
-            <div class="ingredients">
+            <ul class="ingredients">
                 {% for ingredient in receita.ingredients %}
                     <li>{{ingredient}};</li><br>
                 {% endfor %}
-            </div>
+            </ul>
             <h1>Modo de preparo</h3>
-            <div class="prepare">
-                    {% for prepare in receita.preparation %}
-                        <li>{{prepare}};</li><br>
-                    {% endfor %}
-            </div>
+            <ol class="prepare">
+                {% for prepare in receita.preparation %}
+                    <li>{{prepare}};</li><br>
+                {% endfor %}
+            </ol>
             <h1>Informações adicionais</h1>
             <div class="informations">
                 <p>{{receita.information}}</p>
