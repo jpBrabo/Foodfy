@@ -1,21 +1,31 @@
 {% extends "./admin_layout.njk" %}
 
 {% block content %}
-<header class="top">
-    <h1>Gerenciar receitas</h1>
-    <a href="/admin/recipes/create"><button>Criar uma receita</button></a>
-</header>
+    <header class="top">
+        <h1>Gerenciar receitas</h1>
+        <a href="/admin/recipes/create">
+            <button>Criar uma receita</button>
+        </a>
+    </header>
     <section class="cards">
         {% for receita in receitas %}
             <div class="card" id="{{receita.id}}">
-                <img src="{{receita.image_url}}" alt="{{receita.title}}">
+                <img src="{{receita.image}}" alt="{{receita.title}}">
                 <div class="description">
-                    <h3 id="{{receita.title}}">{{receita.title}}</h3>
-                    <p id="{{receita.author}}">{{receita.author}}</p>
+                    <h4 id="{{receita.title}}">{{receita.title}}</h4>
+                    <p id="{{receita.chef_name}}">{{receita.chef_name}}</p>
                 </div>
             </div>
         {% endfor %}
     </section>
-<script src="/scripts/redirect.js"></script>
-<script src="/scripts/pageActiveAdmin.js"></script>
+    <script src="/scripts/pageActiveAdmin.js"></script>
+    <script>
+        const cards = document.querySelectorAll(".card");
+        for (let card of cards) {
+            card.addEventListener("click", () => {
+                const recipeId = card.getAttribute("id")
+                window.location.href = `/admin/recipes/view/${recipeId}`
+            })
+        }
+    </script>
 {% endblock content %}

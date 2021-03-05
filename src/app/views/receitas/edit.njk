@@ -1,13 +1,20 @@
+{% extends "../admin/admin_layout.njk" %}
+{% block content%}
 <link rel="stylesheet" href="/styles/create.css">
+<form method="post" id="form__delete" action="/receitas?_method=DELETE">
+    <input type="hidden" name="id" value="{{receita.id}}">
+</form>
 <header class="top">
-    <h1>Criando receita</h1>
-    <form method="post" action="/receitas?_method=DELETE"><input type="hidden" name="id" value="{{receita.id}}"><button type="submit">Deletar</button></form>
-    <button type="submit" form="change_values">Salvar receita</button>
+    <h1>Editando receita</h1>
+    <div>
+        <button type="submit" form="form__delete" style="background-color:#DC4747">Deletar</button>
+        <button type="submit" form="form__edit" style="background-color:#7154c1">Salvar receita</button>
+    </div>
 </header>
 
-<form id="change_values" method="POST" action="/receitas?_method=PUT">
+<form id="form__edit" method="POST" action="/receitas?_method=PUT">
 <input type="hidden" name="id" value={{receita.id}}>
-    <div class="card">
+    <div class="inputs">
         <div class="info">
             <div>Nome da receita</div>
             <div><input type="text" name="title" placeholder="Nome"  value="{{receita.title}}"></div>
@@ -15,8 +22,18 @@
         </div>
         <div class="info">
             <div>Imagem da receita</div>
-            <div><input type="url" name="image_url" placeholder="http://" value="{{receita.image_url}}"></div>
+            <div><input type="url" name="image" placeholder="http://" value="{{receita.image}}"></div>
         </div>
+        <div class="info">
+                <div>Chef</div>
+                <div>
+                    <select name="chef_id">
+                        {% for chef in chefOptions %}
+                            <option value={{chef.id}}>{{chef.name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
         <div class="info">
             <div>Ingredientes</div>
             <div id="ingredients">
@@ -39,13 +56,13 @@
             <div>Modo de preparo</div>
             <div id="prepare">
                 <div class="prepare">
-                    {% if receita.ingredients != [] %}
-                        {% for prepare in receita.prepare %}
-                            <input type="text" name="prepare" placeholder="Modo de Preparo" value="{{ prepare }}" />
+                    {% if receita.preparation != '' %}
+                        {% for preparation in receita.preparation %}
+                            <input type="text" name="preparation" placeholder="Modo de Preparo" value="{{ preparation }}" />
                         {% endfor %}
                     {% endif %}
-                    {% if receita.ingredients == [] %}
-                        <input type="text" name="prepare" placeholder="Modo de preparo">
+                    {% if receita.preparation == '' %}
+                        <input type="text" name="preparation" placeholder="Modo de preparo">
                     {% endif %}
                 </div>
             </div>
@@ -54,7 +71,7 @@
         <div class="info">
             <div>Informações adicionais</div>
             <div>
-                <textarea name="informations" cols="30" rows="10" >{{receita.informations}}</textarea>
+                <textarea name="information" cols="30" rows="10" >{{receita.information}}</textarea>
             </div>
         </div>
     </div>
@@ -63,3 +80,4 @@
 <script src="/scripts/ingredient.js"></script>
 <script src="/scripts/prepare.js"></script>
 <script src="/scripts/pageActiveAdmin.js"></script>
+{% endblock content %}
