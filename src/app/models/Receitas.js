@@ -35,7 +35,10 @@ module.exports = {
         });
     },
     findRecipe(id, callback) {
-        db.query(`SELECT * FROM recipes WHERE id = $1`,[id], (err, results) => {
+        db.query(`SELECT recipes.*, chefs.name AS chef_name
+        FROM recipes 
+        LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+        WHERE recipes.id = $1`,[id], (err, results) => {
             if (err) throw `Database error. ${err}`;
             callback(results.rows[0])
         })
@@ -43,19 +46,21 @@ module.exports = {
     updateRecipe(data, callback) {
         const query = `
         UPDATE recipes SET
-            title=($1),
-            image_url=($2),
-            ingredients=($3),
-            prepare=($4),
-            informations=($5)
-        WHERE id = $6
+            chef_id=($1),
+            image=($2),
+            title=($3),
+            ingredients=($4),
+            preparation=($5),
+            information=($6)
+        WHERE id = $7
         `
         const values = [
+            data.chef_id,
+            data.image,
             data.title,
-            data.image_url,
             Array(data.ingredients),
-            Array(data.prepare),
-            data.informations,
+            Array(data.preparation),
+            data.information,
             data.id
         ]
         

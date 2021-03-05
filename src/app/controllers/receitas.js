@@ -19,6 +19,8 @@ module.exports = {
     showRecipe(req,res) {
         Receitas.findRecipe(req.params.id, receita => {
             if(!receita) throw new Error("Recipe not found.")
+            receita.ingredients = Array(receita.ingredients).toString().split(",")
+            receita.preparation = Array(receita.preparation).toString().split(",")
             return res.render("receitas/show", { receita })
         })
     },
@@ -27,10 +29,22 @@ module.exports = {
             return res.render("admin/home", { receitas })
         })
     },
+    adminRecipeShow(req,res){
+        Receitas.findRecipe(req.params.id, receita => {
+            if(!receita) throw new Error("Recipe not found.")
+            receita.ingredients = Array(receita.ingredients).toString().split(",")
+            receita.preparation = Array(receita.preparation).toString().split(",")
+            return res.render("admin/recipe_view", { receita })
+        })
+    },
     adminRecipeEdit(req,res) {
         Receitas.findRecipe(req.params.id, receita => {
             if(!receita) throw new Error("Recipe not found.")
-            return res.render("receitas/edit", { receita })
+            receita.ingredients = Array(receita.ingredients).toString().split(",")
+            receita.preparation = Array(receita.preparation).toString().split(",")
+            Receitas.chefsSelectOptions(options => {
+                return res.render("receitas/edit", { receita, chefOptions: options })
+            })
         })
     },
     adminRecipeCreate(req,res) {
