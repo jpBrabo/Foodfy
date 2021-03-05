@@ -10,7 +10,10 @@ module.exports = {
     showChef(req,res) {
         Chefs.findChef(req.params.id, chef => {
             if(!chef) throw new Error("Recipe not found.")
-            return res.render("chefs/show", { chef })
+            Chefs.findRecipeChef(req.params.id, recipes => {
+                if(!recipes) throw new Error("Error.")
+                return res.render("chefs/show", { chef, receitas: recipes })
+            })
         })
     },
     adminChef(req,res) {
@@ -20,7 +23,10 @@ module.exports = {
     },
     adminChefShow(req,res) {
         Chefs.findChef(req.params.id, chef => {
-            return res.render("admin/chef_view", { chef })
+            Chefs.findRecipeChef(req.params.id, recipes => {
+                console.log(recipes)
+                return res.render("admin/chef_view", { chef, receitas: recipes })
+            })
         })
     },
     adminChefEdit(req,res) {
