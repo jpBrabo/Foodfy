@@ -32,7 +32,10 @@ Tarefas para terminar:
 - [x] Refatorar projeto.
 - [x] Armazenar receitas no banco de dados.
 - [x] Refatorar a parte de editar e deletar receitas.
-- [x] Criação de chefs.
+- [x] Criar chefs.
+- [x] Ver chefs.
+- [x] Editar chefs.
+- [x] Deletar chefs.
 - [ ] Filtro de receitas.
 
 ## 👷 Instalação
