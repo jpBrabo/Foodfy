@@ -11,9 +11,8 @@
             {% for receita in receitas %}
                 <div class="card" id="{{receita.id}}">
                     <img src="{{receita.image}}" alt="{{receita.title}}">
-                    <div class="description">
+                    <div class="only__title">
                         <h3 id="{{receita.title}}">{{receita.title}}</h3>
-                        <p>Feito por {{chef.name}}</p>
                     </div>
                 </div>
             {% endfor %}
