@@ -53,6 +53,10 @@ Com Https
 ```bash
 git clone https://github.com/jpbrab0/Foodfy.git
 ```
+Com Github CLI
+```bash
+gh repo clone jpbrab0/Foodfy
+```
 
 Ápos a instalação entre no diretório do projeto e rode:
 ```bash
